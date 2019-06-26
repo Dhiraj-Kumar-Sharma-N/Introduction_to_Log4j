@@ -1,0 +1,86 @@
+Use log. Error() to log when elements are not displayed in the page or if any validations fail
+
+Use Log. Debug()
+
+When each Selenium action is performed like click, SendKeys, getText()
+
+Use log.info()
+
+When operation is successfully completed ex: After loading page, or after any successful validations
+
+It’s just counterpart to log. Error()
+
+
+======================= BASIC LOG4J.XML CONFIGURATION FILE =======================================
+
+
+2 Different tags used in XML File - 
+
+1.Appenders 
+2.loggers
+
+WHERE TO LOG? - Either Console or a Different File //Appenders Tag		
+				if Console tag is used inside the appenders tag then output will be printed in Cosole
+				if File tag is used inside the appenders tag then output will be printed in File
+
+EX: <Console name="Console" target="SYSTEM_OUT">
+
+HOW TO LOG ?  - Format of Printing to the console/File //Appenders Tag-PatternLayout tag	
+				output =
+				
+				21:36:38.263      [main]  ERROR     Alpha.Log4j_Demo_01 - Error Message is displayed
+				%d{HH:mm:ss.SSS}  [%t]	  %-5level  %logger{36}			- %msg%n"
+				
+				
+
+ 
+EX: <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+
+WHAT TO LOG ?   -  it contain the information of what has to be logged //Logger tag
+				   if root tag level is ERROR ,It prints only Error Messages   
+				   if root tag level is TRACE ,It prints only All Messages  			   
+				
+	<Root level="error">
+      <AppenderRef ref="Console"/>  //Reference to Appenders take with refname
+    </Root>
+
+
+In order to Setup Logger Create Resource Folder add Log4j2.xml File 
+configure it to the build path using Folder and then add that Resouce Folder to it.
+
+IN ORDER TO SPECIFY WHAT TO LOG IN EACH CLASS WE USE 
+
+ <Logger name="PackageName.ClassName" level="trace" additivity="false">
+      <AppenderRef ref="Console"/>
+
+SAMPLE XML FILE 
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+       <Properties>
+<Property name="basePath">./logs</Property>
+</Properties>
+ 
+  <Appenders>
+      <RollingFile name="File" fileName="${basePath}/Applet.log" filePattern="${basePath}/prints-%d{yyyy-MM-dd}.log">(on creating new file filepattern is followed)
+     <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+      <SizeBasedTriggeringPolicy size="500" />(if size exceets 500kb creates new file)
+          </RollingFile>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="trace">
+      <AppenderRef ref="File"/>
+    </Root>
+  </Loggers>
+</Configuration> 
+
+
+note:
+additivity="false" --- if this tag is missing in loggers tag then logs will be replicated since its default value is true 
+
+If it is set to false then logs wont get Replicated

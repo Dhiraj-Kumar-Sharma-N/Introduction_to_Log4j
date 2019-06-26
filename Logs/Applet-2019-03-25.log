@@ -1,0 +1,7 @@
+10:26:02.529 [main] DEBUG PractiseTest.Sample - Now hitting Amazon server
+10:27:03.347 [main] INFO  PractiseTest.Sample - Landed on amazon home page
+10:38:48.318 [main] DEBUG PractiseTest.Sample - Setting chrome driver property
+10:39:09.176 [main] INFO  PractiseTest.Sample - Window Maximized
+10:39:09.178 [main] DEBUG PractiseTest.Sample - Now hitting Amazon server
+10:39:20.496 [main] INFO  PractiseTest.Sample - Landed on amazon home page
+10:39:40.654 [main] DEBUG PractiseTest.Sample - Getting the frames count

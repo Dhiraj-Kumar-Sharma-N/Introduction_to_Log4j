@@ -1,0 +1,8 @@
+23:59:31.254 [main] INFO  Gamma.Log4j_Demo_03 - Button is Displayed
+23:59:31.276 [main] ERROR Gamma.Log4j_Demo_03 - Button is not Displayed
+23:59:31.276 [main] FATAL Gamma.Log4j_Demo_03 - Button is Missing
+23:59:36.129 [main] DEBUG Gamma.Log4j_Demo_03 - I have Clicked on the button
+23:59:36.135 [main] INFO  Gamma.Log4j_Demo_03 - Button is Displayed
+23:59:36.135 [main] ERROR Gamma.Log4j_Demo_03 - Button is not Displayed
+23:59:36.136 [main] FATAL Gamma.Log4j_Demo_03 - Button is Missing
+23:59:38.624 [main] DEBUG Gamma.Log4j_Demo_03 - I have Clicked on the button

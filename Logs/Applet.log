@@ -1,0 +1,4 @@
+10:39:40.721 [main] INFO  PractiseTest.Sample - Frames count retreived
+10:39:40.792 [main] INFO  PractiseTest.Sample - Successfully switched to frame
+10:39:40.792 [main] DEBUG PractiseTest.Sample - Identifying Draggable objects
+10:39:41.742 [main] INFO  PractiseTest.Sample - Drag and drop success
